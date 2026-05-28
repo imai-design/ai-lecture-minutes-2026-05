@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>対象団体 AI研修 議事録 — 2026-05-27</title>
+<style>
+  :root{
+    --bg:#fbfaf6; --paper:#ffffff; --ink:#1a1a1a; --muted:#6b6f76;
+    --line:#e3ddc8; --gold:#b8860b; --gold-soft:#fff7d4;
+    --hl:#fff19c; --accent:#0f4c81; --rule:#c9c2a8;
+    --shadow: 0 2px 16px rgba(60,40,0,0.06);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Hiragino Mincho ProN","Yu Mincho",serif;
+    line-height:1.85; font-size:16px; -webkit-font-smoothing:antialiased;}
+  .page{max-width:880px; margin:0 auto; padding:3rem 1.5rem 6rem;}
+  /* ヘッダ */
+  header.doc-head{
+    border-top:3px double var(--rule); border-bottom:1px solid var(--rule);
+    padding:1.4rem 0; margin-bottom:2rem; position:relative;
+  }
+  header.doc-head .stamp{
+    position:absolute; right:0; top:0.4rem;
+    border:2px solid var(--gold); color:var(--gold);
+    padding:0.2rem 0.6rem; border-radius:4px;
+    font-family:"Hiragino Sans","Yu Gothic UI",sans-serif;
+    font-size:0.7rem; letter-spacing:0.3em; transform:rotate(-3deg);
+  }
+  header h1{
+    margin:0; font-size:1.8rem; letter-spacing:0.05em; font-weight:600;
+  }
+  header .sub{
+    color:var(--muted); margin-top:0.3rem; font-size:0.95rem;
+    font-family:"Hiragino Sans","Yu Gothic UI",sans-serif;
+  }
+  /* メタ表 */
+  table.meta{
+    width:100%; border-collapse:collapse; margin:1.4rem 0;
+    font-family:"Hiragino Sans","Yu Gothic UI",sans-serif; font-size:0.9rem;
+  }
+  table.meta th, table.meta td{
+    padding:0.55rem 0.8rem; border-bottom:1px solid var(--line); text-align:left;
+    vertical-align:top;
+  }
+  table.meta th{
+    width:140px; color:var(--muted); font-weight:500; background:var(--gold-soft);
+    border-bottom-color:var(--rule);
+  }
+  /* セクション */
+  section.chapter{
+    margin:3rem 0; padding:1.4rem 1.6rem; background:var(--paper);
+    border:1px solid var(--line); border-radius:6px;
+    box-shadow:var(--shadow); position:relative;
+  }
+  section.chapter::before{
+    content:""; position:absolute; left:-1px; top:1.4rem; bottom:1.4rem;
+    width:4px; background:var(--gold); border-radius:2px;
+  }
+  .chap-head{display:flex; align-items:baseline; gap:1rem; flex-wrap:wrap;
+    border-bottom:1px solid var(--line); padding-bottom:0.5rem; margin-bottom:0.9rem;}
+  .chap-head .num{
+    color:var(--gold); font-weight:700; letter-spacing:0.15em;
+    font-family:"Hiragino Sans","Yu Gothic UI",sans-serif; font-size:0.8rem;
+  }
+  .chap-head h2{
+    margin:0; font-size:1.3rem; font-weight:600; letter-spacing:0.03em; flex:1 1 auto;
+  }
+  .chap-head .ts{
+    color:var(--muted); font-size:0.8rem; font-variant-numeric:tabular-nums;
+    font-family:"Hiragino Sans","Yu Gothic UI",sans-serif;
+  }
+  .summary{
+    background:var(--gold-soft); padding:0.7rem 1rem; border-radius:4px;
+    margin-bottom:1rem; font-size:0.95rem; border-left:3px solid var(--gold);
+  }
+  .summary strong{ color:var(--gold); font-weight:700; }
+  h3.sub{
+    font-size:1rem; margin:1.2rem 0 0.5rem;
+    padding-left:0.6rem; border-left:3px solid var(--accent); letter-spacing:0.05em;
+  }
+  ul.points{ padding-left:1.4rem; margin:0.4rem 0 0.6rem; }
+  ul.points li{ margin:0.25rem 0; }
+  ul.points li mark{ background:var(--hl); padding:0 2px; border-radius:2px; }
+  /* 引用 */
+  blockquote.quote{
+    margin:0.9rem 0; padding:0.6rem 1rem;
+    border-left:4px solid var(--gold); background:#fbf6e7;
+    font-family:"Hiragino Mincho ProN","Yu Mincho",serif;
+    font-style:normal; position:relative;
+  }
+  blockquote.quote::before{
+    content:"“"; position:absolute; left:0.2rem; top:-0.5rem;
+    font-size:2rem; color:var(--gold); opacity:0.5;
+  }
+  blockquote.quote .who{
+    display:block; margin-top:0.3rem; font-size:0.8rem; color:var(--muted);
+    text-align:right; font-family:"Hiragino Sans",sans-serif;
+  }
+  /* Q&A */
+  .qa{ margin:1rem 0; }
+  .qa .q{
+    background:#eef2f7; padding:0.5rem 0.8rem; border-radius:4px;
+    border-left:3px solid var(--accent); margin-bottom:0.3rem;
+  }
+  .qa .q::before{ content:"Q "; color:var(--accent); font-weight:700; letter-spacing:0.1em;}
+  .qa .a{
+    padding:0.5rem 0.8rem 0.5rem 1.4rem;
+  }
+  .qa .a::before{ content:"A "; color:var(--gold); font-weight:700; letter-spacing:0.1em;}
+  /* 決定事項 */
+  ul.decisions{
+    list-style:none; padding:0;
+  }
+  ul.decisions li{
+    padding:0.6rem 0.8rem 0.6rem 2.2rem; margin:0.4rem 0;
+    background:#f5fef5; border:1px solid #cfe5cf; border-radius:4px;
+    position:relative;
+  }
+  ul.decisions li::before{
+    content:"✔"; position:absolute; left:0.7rem; top:0.55rem;
+    color:#2e8c5a; font-weight:700;
+  }
+  ul.actions li::before{ content:"▶"; color:#c47b00; }
+  /* 名言ボックス */
+  .quote-box{
+    border:2px dashed var(--gold); padding:1.2rem 1.4rem;
+    border-radius:6px; background:#fffbe8;
+    margin:1.4rem 0; text-align:center;
+    font-family:"Hiragino Mincho ProN","Yu Mincho",serif;
+    font-size:1.1rem; letter-spacing:0.04em;
+  }
+  /* TOC */
+  nav.toc{
+    background:#f7f3e4; border:1px solid var(--line);
+    padding:1rem 1.2rem; border-radius:6px; margin-bottom:2rem;
+    font-family:"Hiragino Sans","Yu Gothic UI",sans-serif;
+  }
+  nav.toc h3{ margin:0 0 0.5rem; font-size:0.75rem; letter-spacing:0.2em; color:var(--muted); text-transform:uppercase;}
+  nav.toc ol{ padding-left:1.2rem; margin:0; columns:2; font-size:0.9rem; }
+  nav.toc ol li{ margin:0.25rem 0; break-inside:avoid; }
+  nav.toc a{ color:var(--ink); text-decoration:none; border-bottom:1px dotted var(--line);}
+  nav.toc a:hover{ color:var(--gold); border-color:var(--gold); }
+  /* 末尾リンク */
+  footer.doc-foot{
+    margin-top:3rem; padding:1.5rem 0; border-top:3px double var(--rule);
+    color:var(--muted); font-size:0.85rem; text-align:center;
+    font-family:"Hiragino Sans","Yu Gothic UI",sans-serif;
+  }
+  footer.doc-foot a{ color:var(--accent); text-decoration:none; margin:0 0.5rem;}
+  footer.doc-foot a:hover{ text-decoration:underline; }
+  /* 印刷 */
+  @media print{
+    body{background:#fff;}
+    .page{padding:1cm; max-width:100%;}
+    section.chapter{box-shadow:none; border-color:#999; page-break-inside:avoid;}
+    nav.toc{break-after:page;}
+    header.doc-head .stamp{ display:none;}
+  }
+  /* レスポンシブ */
+  @media (max-width:700px){
+    .page{padding:1.5rem 1rem;}
+    header h1{font-size:1.4rem;}
+    nav.toc ol{columns:1;}
+    section.chapter{padding:1rem;}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<header class="doc-head">
+  <div class="stamp">議事録</div>
+  <h1>某スポーツ統括団体向け AI研修 議事録</h1>
+  <div class="sub">2026年5月27日／講師：AI研修運営会社 代表（共同経営者と共同創業）／所要：約1時間40分（70分本編＋20分Q&A、休憩込）</div>
+</header>
+
+<table class="meta">
+  <tr><th>日時</th><td>2026年5月27日</td></tr>
+  <tr><th>講師</th><td><strong>AI研修運営会社</strong> 代表（46歳・MBA・経営歴24年、共同創業者と2年前に共同設立）。AIコンサル350社、顧問先の一スポーツクラブも顧問先の一つ。大手自動車メーカー会長との関係（（個人エピソード））言及あり。</td></tr>
+  <tr><th>受講側</th><td>対象団体（某スポーツ統括団体）幹部。会長以下、会長、副会長、情報システム所管、OBのお一人、ほか8〜10名（オンライン参加含む）</td></tr>
+  <tr><th>形式</th><td>通常5時間の研修を <strong>70分にキュッと凝縮</strong>。10分×7セット ＋ 20分Q&A の構成（ハーフタイム3分含む）</td></tr>
+  <tr><th>主題</th><td>40〜50代・非エンジニア向け、生成AI／AIエージェントを業務に取り入れる実務論</td></tr>
+  <tr><th>到達目標</th><td>受講後、明日朝に <strong>Claude を実際に触る行動変容</strong>。「AI使ってみるか」「部下のAI相談を一蹴せず検討する」</td></tr>
+  <tr><th>編集方針</th><td>本ページは元音声の書き起こしから個人名・組織名を抽象化したダイジェスト。固有名詞は伏せていますが、AI論としての内容は原文の趣旨を保全しています。</td></tr>
+</table>
+
+<nav class="toc">
+  <h3>目次</h3>
+  <ol>
+    <li><a href="#open">0. オープニング（デモ7秒）</a></li>
+    <li><a href="#ch1">1. AIと生成AIの違い</a></li>
+    <li><a href="#ch2">2. 3つの部下（Claude Chat/Cowork/Code）</a></li>
+    <li><a href="#ch3">3. フィジカルAI（ロボット元年）</a></li>
+    <li><a href="#ch4">4. 仕事はどう変わるか（米国の現状）</a></li>
+    <li><a href="#ch5">5. メンタルと実践（音声入力・並列）</a></li>
+    <li><a href="#ch6">6. 終わりに（管理職の役割）</a></li>
+    <li><a href="#qa">7. 質疑応答</a></li>
+    <li><a href="#decisions">8. 決定事項・推奨アクション</a></li>
+    <li><a href="#bonmot">9. 名言抜粋</a></li>
+  </ol>
+</nav>
+
+<!-- ===== オープニング ===== -->
+<section class="chapter" id="open">
+  <div class="chap-head">
+    <span class="num">PROLOGUE</span>
+    <h2>オープニング — AI実演デモで掴みを取る</h2>
+    <span class="ts">0:00〜10:00頃</span>
+  </div>
+  <div class="summary">
+    <strong>要旨:</strong> 講師は前日夜にスマホで「Claude に 対象団体 の業績推移20年をダッシュボード化して」「対象団体売上収益20年分を分析して」「対象団体今後の経営ビジョンを20ページの戦略レポートに」と打っただけのアウトプットを次々提示。
+    <strong>NotebookLM</strong>（Google）を使い、20ページのレポートをマインドマップ／1枚画像／PowerPointスライド／動画解説に瞬時変換した実例を見せ、AIの威力を体感させた。
+  </div>
+  <h3 class="sub">主要発言</h3>
+  <blockquote class="quote">クロードに「対象団体の業績どうだろう、上場業績の20年分をうまいこと出して」って言ったらバン、です。当たってるか僕は知らないですよ。<span class="who">— 講師（業績ダッシュボードを画面提示しながら）</span></blockquote>
+  <blockquote class="quote">これがAIが5秒で作ったダッシュボードです。インプットは何もなしで、昨日テレビ見ながらスマホで撮ったやつです。<span class="who">— 講師</span></blockquote>
+  <h3 class="sub">登壇姿勢のメモ</h3>
+  <ul class="points">
+    <li>講師スタイル：<mark>準備運動（アイスブレイク）を10分使う</mark>。「内容よりも前段が面白い」</li>
+    <li>進行：講師の山井氏が10分ごとに「次の章へ」とコントロール</li>
+    <li>会場ルール：録画NG、外部公開できないスライドあり（社内資料扱い）</li>
+  </ul>
+</section>
+
+<!-- ===== 第1回 ===== -->
+<section class="chapter" id="ch1">
+  <div class="chap-head">
+    <span class="num">SESSION 01</span>
+    <h2>AIと生成AIの違い — 学習済み・日本語対応の革命</h2>
+    <span class="ts">10:00〜20:00</span>
+  </div>
+  <div class="summary">
+    <strong>要旨:</strong> 従来のAI＝「生まれたての赤ちゃん」（日本語通じず、機械学習をゼロから必要、Pythonでしか触れない＝人口の1％しか使えない）。生成AI＝「卒業証書を持った25歳」（学習済み、日本語OK、誰でも使える）。これを <strong>モデル（型番）</strong> という卒業証書で表す（GPT-5、Gemini 3、Claude等）。
+    現在は <strong>LLM（言語モデル）の限界</strong> に到達、物理法則を知る <strong>ワールドモデル</strong> 競争が始まった。NVIDIA社長は「年内にワールドモデル搭載ロボットが動く」と発言＝<mark>2026年がフィジカルAI元年</mark>。
+  </div>
+  <h3 class="sub">受講者からの質問</h3>
+  <div class="qa">
+    <div class="q">ワールドモデルはいつ完成？</div>
+    <div class="a">NVIDIA社長が「今年末まで」と発言。今年がフィジカルAI元年と呼ばれている。自動運転も、これまで15年かけた機械学習モデルから、生成AIベースに切り替わりつつある（赤ちゃんに15年かけて運転を教えるより、25歳に教える方が早い、と気づき始めた）。</div>
+  </div>
+</section>
+
+<!-- ===== 第2回 ===== -->
+<section class="chapter" id="ch2">
+  <div class="chap-head">
+    <span class="num">SESSION 02</span>
+    <h2>3つの部下が、月20ドルで手に入る</h2>
+    <span class="ts">20:00〜32:00</span>
+  </div>
+  <div class="summary">
+    <strong>要旨:</strong> ChatGPTは<strong>「口だけ野郎」</strong>（指示するとレシピをくれる）。<strong>エージェント型AI</strong>は実際に立ち上がって仕事する（システムを作る）。
+    Anthropic社（OpenAIの時価総額を超え世界一）の Claude が現時点ベスト。
+    <strong>Claude Chat = 秘書／Claude Cowork = ビジネス部下（弁護士・会計士・マーケ・セールス等プラグイン50職種）／Claude Code = エンジニアチーム</strong>。
+    月20ドル≒3,000円で20人チームを手に入れる感覚。
+  </div>
+  <h3 class="sub">3つの部下まとめ</h3>
+  <ul class="points">
+    <li><strong>Claude Chat（秘書）</strong>：とりあえず何でも投げれる相談役。「これ誰に頼めば」も含めて</li>
+    <li><strong>Claude Cowork（ビジネス部下＋専門家プラグイン）</strong>：弁護士・会計士・マーケ・セールス・ファイナンス等50職種をプラグインで召喚</li>
+    <li><strong>Claude Code（エンジニアチーム）</strong>：チケット再販システム等、本当にアプリを作ってくれる</li>
+  </ul>
+  <h3 class="sub">リーガル比較ブラインドテスト（実話）</h3>
+  <p>講師の社内弁護士に名前を伏せて採点させたところ、Google Gemini = <strong>0点</strong>／ChatGPT = <strong>50点</strong>／Claude Cowork リーガル = <strong>60〜90点</strong>。「ぶっちゃけ全部Claudeでチェックさせて」と弁護士本人が降参。</p>
+  <h3 class="sub">主要発言</h3>
+  <blockquote class="quote">秘書とビジネス部下とエンジニアチームを月2,000円で持てる。誰もChatGPTなんて使ってないですよ、今。<span class="who">— 講師</span></blockquote>
+  <blockquote class="quote">この子たち寝ないんですね。24時間動いて土日祝も働いてるので、仕事を指示すると終わりましたって来る。<mark>逆に経営者が忙しくなる</mark>のが目下の困りごとです。<span class="who">— 講師</span></blockquote>
+  <div class="quote-box">作ってくれるのが Cowork ／ レシピだけくれるのが ChatGPT</div>
+</section>
+
+<!-- ===== 第3回 ===== -->
+<section class="chapter" id="ch3">
+  <div class="chap-head">
+    <span class="num">SESSION 03</span>
+    <h2>フィジカルAI元年 — 画面の外に出る</h2>
+    <span class="ts">32:00〜46:00</span>
+  </div>
+  <div class="summary">
+    <strong>要旨:</strong> AI＝Artificial Intelligenceで「脳」だけだったが、ワールドモデルで物理法則がわかるようになり「身体」を持つ＝ロボット。
+    二足歩行ロボ≒450万円、四足歩行≒20万円〜140万円まで価格低下。
+    用途：警備（不審者検知＋顔データベース照合）、巡回（夜間・危険場所）、調理（無人店舗）、農業、消防、そして<strong>クマ撃退</strong>（ロケット花火40発を四足ロボ3台で発射する真面目な構想あり）。
+  </div>
+  <h3 class="sub">団体特有の応用アイデア（受講者発・講師肯定）</h3>
+  <div class="qa">
+    <div class="q">試合中の代表チームの戦術変更にAIを使えるか？</div>
+    <div class="a">めちゃくちゃ良い。<mark>監督の周りに5人のドラえもん</mark>を置く：①保守的戦術担当 ②ダイナミック戦術担当 ③キーパー視点 ④相手監督の気持ち ⑤戦力分析。Webカメラで試合を中継させればリアルタイムで学習＋助言。テクニカルスタッフ上にも置ける。ルール上問題なければ画期的。</div>
+  </div>
+  <p>講師は自社で<strong>四足ロボ140万円</strong>を購入済。動物園の警備や恐竜の着ぐるみを着せて遊ばせる構想あり。</p>
+</section>
+
+<!-- ===== 第4回 ===== -->
+<section class="chapter" id="ch4">
+  <div class="chap-head">
+    <span class="num">SESSION 04</span>
+    <h2>仕事はどう変わるか — 米国の現状と日本の救世主</h2>
+    <span class="ts">46:00〜57:00</span>
+  </div>
+  <div class="summary">
+    <strong>要旨:</strong> 2022年まで「人的資本経営」（人投資＝株価連動）。今は <strong>AI資本経営</strong> へ。S&amp;P500は上がっているのに求人倍率は下がる構造変化。
+    <strong>米国は2026年1月の1ヶ月で10万人リストラ</strong>（年換算120万人）。日本は同期間で1万人。日本は<strong>2040年に労働力1,100万人不足</strong>、しかも法律上クビにしづらい文化＝<mark>AIは「救世主」</mark>。
+    米国ではホワイトカラーが寿司職人を志望する逆転現象（AIに代替されにくいブルーカラー回帰）。
+  </div>
+  <h3 class="sub">講師の中核メッセージ</h3>
+  <ul class="points">
+    <li>会社売上の <strong>1％をAI投資</strong> が新標準（1億の会社なら年100万円）</li>
+    <li>文系人材が生成AIで <strong>エンジニアと対話できる橋</strong> を作るのが鍵</li>
+    <li><mark>素人が作った家に住めるか問題</mark>：作れる≠公開できる。エンジニアのレビューは必要</li>
+    <li>1996年に出版社200台がWindows95を配布 → 2年後誰も使わず雑誌台になった事例＝今回も同じ轍を踏むな</li>
+  </ul>
+  <h3 class="sub">団体文脈で出た具体例</h3>
+  <p>登録会員90万人（実は40万→90万まで増えた、と会場で確認）の対応をAI電話／AIチャット24時間化。「夜中3時半に『大型イベントのチケットいくらなら買える？』に AI が応答」。録音／チャットログは全部役職員＋エンジニアに自動共有、社内分断を解消。</p>
+</section>
+
+<!-- ===== ハーフタイム＆雑談 ===== -->
+<section class="chapter" id="break">
+  <div class="chap-head">
+    <span class="num">HALFTIME</span>
+    <h2>休憩中の雑談（記録）</h2>
+    <span class="ts">57:00〜60:00</span>
+  </div>
+  <ul class="points">
+    <li>「リーガル（法律オプション）は喫緊で入れた方がいい。弁護士事務所も結構入れている」</li>
+    <li>対象団体側「うちはマイクロソフト Copilot 給料版を導入済」。講師「マイクロソフトはエンタープライズの首根っこで強いだけ。製品自体は…」と率直な比較</li>
+    <li>組織契約は1人20ドル前後、人数が多ければ交渉で下げられる</li>
+    <li>Claudeを使えていればChatGPTのCodex／GoogleのClaude Codeに乗り換えても同じノウハウが効く（乗り換えボタンまである）</li>
+  </ul>
+</section>
+
+<!-- ===== 第5回 ===== -->
+<section class="chapter" id="ch5">
+  <div class="chap-head">
+    <span class="num">SESSION 05</span>
+    <h2>メンタルと実践 — 触る・喋る・並列する</h2>
+    <span class="ts">60:00〜70:00</span>
+  </div>
+  <div class="summary">
+    <strong>要旨:</strong> 中身よりまず<strong>「動け」</strong>。明日朝Claudeを触っているかが分岐点。AIは医者の処方箋＝飲まないと効かない。
+    <strong>音声入力に切り替えよ</strong>：講師は8人のAIを並列で立ち上げ、5分で全員に音声指示→コーヒー取りに行って10分後に成果を回収する仕事スタイル。
+    <strong>風呂蓋にスマホを乗せ、湯船で延々と経営戦略を喋り続ける</strong> 運用も推奨。
+  </div>
+  <h3 class="sub">情報漏洩リスクの率直論</h3>
+  <blockquote class="quote">建前は「セキュリティ徹底して」と言いますが、実態は<mark>5歳児が海でおしっこした程度</mark>。データの海はめちゃくちゃ広大で、20ページ書類を間違ってアップしてもまず引き当てられません。銀行暗証番号を9回入力しても誰にもバレない。<br>※ ただしチームプラン／コーポレートプランは学習データに送られない設定。個人無料版だけは要注意。<span class="who">— 講師（フレッコ＝オフレコ前提）</span></blockquote>
+  <h3 class="sub">監視・評価への応用</h3>
+  <ul class="points">
+    <li>登録会員90万人を人間が監視は無理→AIが <strong>全員のモチベ／メンタル／忙しさ</strong> をチャット巡回で可視化</li>
+    <li>講師は自社で「全社員のAIリテラシーを<strong>ABCDE＋測定不能</strong>で格付け」を実施</li>
+    <li>講師自身のモーニングダッシュボード：Gmail／SanaiChat／Slack／Chatwork／Google Calendar／会計／HubSpot／LINE公式／X／AI を毎朝9時に自動集計</li>
+  </ul>
+</section>
+
+<!-- ===== 第6回 ===== -->
+<section class="chapter" id="ch6">
+  <div class="chap-head">
+    <span class="num">SESSION 06</span>
+    <h2>終わりに — 黒字を出すための手段としてのAI</h2>
+    <span class="ts">70:00〜78:00</span>
+  </div>
+  <div class="summary">
+    <strong>要旨:</strong> 管理職の本質は<strong>黒字を出すこと</strong>（部下15人×関係人口15人＝225人の人生を背負う）。
+    AIはその手段でしかない。「私はAIの手先ではないので、皆さんがAIを使わず対象団体が潰れても痛みはない」と踏み込みつつ、便利な道具として強く推奨。
+    <strong>事業を知らないAIコンサルは無意味</strong>＝外注より社内リスキリングか、ドメインを知る相手と組め、と警告。
+  </div>
+  <div class="quote-box">部下が黒人になっただけ。差別せず、AIも部下として迎えよ。</div>
+  <h3 class="sub">人間部下 vs AI部下 — 違いは特性だけ</h3>
+  <ul class="points">
+    <li>言語：両方 日本語</li>
+    <li>時間：人間8時間で帰る／AI 24時間動く</li>
+    <li>採用：人間100人面接して2人／AI ポチッと取れる</li>
+    <li>メンタルケア：人間必要／AI 不要</li>
+  </ul>
+</section>
+
+<!-- ===== Q&A ===== -->
+<section class="chapter" id="qa">
+  <div class="chap-head">
+    <span class="num">Q&amp;A</span>
+    <h2>質疑応答（20分・抜粋）</h2>
+    <span class="ts">78:00〜99:00</span>
+  </div>
+
+  <div class="qa">
+    <div class="q">自分の中のものをどこかに落としたい（分身AI化）に共感した。実現できる？</div>
+    <div class="a">分身を作る発想は素晴らしい。広告運用の達人をAI化して全国で困ってる人に配った事例あり。<strong>都道府県協会に「対象団体標準AIツール」を渡す</strong> 横展開もぴったり。お金系（バックオフィス）から手をつけるのが一案。</div>
+  </div>
+
+  <div class="qa">
+    <div class="q">労働力不足は2040年どころか今この瞬間の課題。AI化を全国組織にどうアップデートさせるか？</div>
+    <div class="a">経営層やる気満々／現場やる気なしが定番。<mark>対策は人事評価との紐付け</mark>。AI使用量はAI自身に集計させられる。使ってない人をE評価／全社員のAI力を可視化して評価に反映。それぐらいやらないと苦しい。</div>
+  </div>
+
+  <div class="qa">
+    <div class="q">「意思決定は人間」の裏返しで、AI出力のプロセスを理解できないと説明も決断もできない。優秀な人間しか残れないのでは？</div>
+    <div class="a">その通り。<strong>業務を知る人 ∩ AIを知る人</strong> の重なりが生き残る。AIが出した法律回答を素人がそのまま転送はできない。リスクの感覚的伝達は理解者にしかできない。ホームページ100万円見積もりが妥当か判断できず100万円取られた90年代と同じ構造、最低限の勉強は必須。</div>
+  </div>
+
+  <div class="qa">
+    <div class="q">ChatGPTばかり使うと考える力がなくなる、と上司に言われた。本当に大丈夫か？</div>
+    <div class="a">スマホで電話番号を暗記しなくなったのと同じ。<mark>知識は陳腐化、人間に求められるのは行動力と決断力</mark>。4年制大学体育会系の学生がバカ買われている。考える時間を減らして焼肉食ったり遊ぶのもいい時代。</div>
+  </div>
+
+  <div class="qa">
+    <div class="q">組織導入はスモールスタート（手挙げ少数）か全社一斉か？</div>
+    <div class="a"><strong>絶対に少数から</strong>。波紋戦略：①自分が触る ②社内の詳しい人に講義作らせる ③幹部に首絞めて受講させる ④全社員。講師自身もClaudeを完全に使えるようになったのは「先々週の月曜日」（先月20日前まで使えていなかった）。</div>
+  </div>
+
+  <div class="qa">
+    <div class="q">（副会長）触ろうと思った。会長への提言として、トップは触るべき？</div>
+    <div class="a"><strong>トップは触るもんじゃない</strong>と思った。3日間徹夜で触った結果、自分で危機感と便利さを知った上で <mark>幹部に任せる</mark> のがベスト。極論、共同創業者は触っていない。共同創業者のマネージャーがめちゃくちゃ使っている。最低30時間は触ってもいい、それ以上は他の仕事に時間を回せ。</div>
+  </div>
+
+  <div class="qa">
+    <div class="q">（情報システム所管）まず自分で触りたい。どこからどう触ればいい？</div>
+    <div class="a">Claude／ChatGPT／Gemini何でも立ち上げ→<mark>音声モードをオン</mark>→「ちょっと相談いい？小学5年生に分かるようにAIエージェントの使い方教えて」と話しかけるだけ。エラー出たらスクリーンショットを投げて「ドラえもん、これ何が悪いか教えて」。AIの使い方はAIに聞け。予算が取れれば朝9時〜夜6時のスパルタキャンプ（9時間オンライン密着）を提供できる。</div>
+  </div>
+</section>
+
+<!-- ===== 決定事項 ===== -->
+<section class="chapter" id="decisions">
+  <div class="chap-head">
+    <span class="num">RESOLUTION</span>
+    <h2>議論を踏まえた推奨アクション</h2>
+    <span class="ts">—</span>
+  </div>
+  <h3 class="sub">対象団体側の次の一手（議論で合意・示唆されたもの）</h3>
+  <ul class="decisions actions">
+    <li><strong>副会長／情報システム所管が自ら音声モードでClaude／Geminiを触る</strong>（数日〜30時間の体験で十分）</li>
+    <li>触った上で <strong>幹部・マネージャー層に展開</strong>。トップ自身は深追いせず権限移譲</li>
+    <li>導入は <strong>少数の手挙げ制スモールスタート</strong>。波紋戦略で全社展開</li>
+    <li><strong>人事評価にAI使用度（ABCDE＋測定不能）</strong> を組み込む準備</li>
+    <li>Claudeチームプラン（1人月20ドル）検討。リーガル／会計／マーケ・プラグインを優先評価</li>
+    <li>登録会員90万人対応：<strong>AI電話＋AIチャット24時間化</strong> のPoC設計</li>
+    <li>都道府県協会への <strong>標準AIツール配布</strong>（分身AI化）を検討</li>
+    <li>代表チーム監督補佐に <strong>5人のドラえもん戦術AI</strong> 構想（ルール確認のうえ）</li>
+  </ul>
+  <h3 class="sub">講師側からのオファー</h3>
+  <ul class="decisions">
+    <li>9時間オンライン密着の <strong>スパルタキャンプ</strong>（個別／チーム）</li>
+    <li>本日規模であれば <strong>現地出張ハンズオン</strong> も対応可</li>
+    <li>共同創業者側との接続（必要に応じて）</li>
+  </ul>
+</section>
+
+<!-- ===== 名言 ===== -->
+<section class="chapter" id="bonmot">
+  <div class="chap-head">
+    <span class="num">QUOTES</span>
+    <h2>名言抜粋 — 持ち帰り用</h2>
+    <span class="ts">—</span>
+  </div>
+  <div class="quote-box">AIを使うことはオーケストラの指揮者になることだ。<br>仕事ができる人ほど自分でバイオリンを弾き始める。それを止めよ。</div>
+  <div class="quote-box">作れる ≠ 公開して使える。<br>素人が建てた家に住めるか、と同じ問題。</div>
+  <div class="quote-box">米国は1ヶ月で10万人クビ。日本は1年で1万人。<br>ただし日本は2040年に1,100万人足りない。<br>米国ではAIは脅威、日本ではAIは救世主だ。</div>
+  <div class="quote-box">事業を知らないAIコンサルは雇うな。<br>業務知識 ∩ AI知識の交点しか残らない。</div>
+  <div class="quote-box">明日朝、Claudeを触っていない人は今日の70分を無駄にした。<br>処方箋を眺めても病気は治らない。</div>
+</section>
+
+<footer class="doc-foot">本ページは内部研修ダイジェスト／実名情報は除去済み<br><small>generated 2026-05-28 ／ 編集: 内部メモ抽象化公開版</small></footer>
+
+</div>
+</body>
+</html>
